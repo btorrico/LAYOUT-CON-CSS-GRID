@@ -1,0 +1,117 @@
+/* grid-template-rows: division de filas
+
+* grid-template-columns: division de columnas 
+* gap: ( row-gap / column-gap) -> espacio de separacion entre filas y columnas 
+* repeat (cantidadDeVeces, unidad de medida)
+* grid-template-areas : Permite definir o "reservar" areas de la grid 
+* grid-area : hace que el alemento tome el espacio previamente reservado por * * grid-template-areas 
+
+* grid-column: line-start / line-end 
+* grid-row: line-start / line-end */
+
+:root {
+  --image1: url(/imagenes/1.jpg);
+  --image2: url(/imagenes/2.jpg);
+  --image3: url(/imagenes/3.jpg);
+  --image4: url(/imagenes/4.jpg);
+}
+
+/* Grid con grid-colum y grid-row */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: black;
+}
+.container {
+  outline: 2px solid #000;
+  width: 90%;
+  max-width: 600px;
+  height: 600px;
+  margin: 300px auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.elemento {
+  font-size: 2rem;
+  color: rgb(255, 255, 255);
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.elemento1 {
+  background-color: rgb(212, 248, 205);
+  grid-column: 1/3;
+  grid-row: 1/2;
+}
+
+.elemento2 {
+  background-color: rgb(165, 199, 247);
+  grid-column: 3/4;
+  grid-row: 1/4;
+}
+
+.elemento3 {
+  background-color: rgb(255, 173, 251);
+  grid-column: 1/3;
+  grid-row: 2/4;
+}
+
+.elemento4 {
+  background-color: rgb(195, 186, 255);
+  grid-column: -4/-1;
+  grid-row: 4/5;
+}
+
+/* Grid usando grid-tempalte-area*/
+
+.container1 {
+  outline: 2px solid #000;
+  width: 90%;
+  max-width: 600px;
+  height: 600px;
+  margin: 300px auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 20px;
+  grid-template-areas:
+    "header header sidebar"
+    "main main sidebar"
+    "main main sidebar"
+    "footer footer footer";
+}
+
+.element {
+  font-size: 2rem;
+  color: #fff;
+  font-family: sans-serif;
+  text-align: center;
+  background-size: cover;
+  background-position: center bottom;
+}
+
+.element1 {
+  background-image: var(--image1);
+  grid-area: header;
+}
+
+.element2 {
+  background-image: var(--image2);
+  grid-area: sidebar;
+}
+
+.element3 {
+  background-image: var(--image3);
+  grid-area: main;
+}
+
+.element4 {
+  background-image: var(--image4);
+  grid-area: footer;
+}

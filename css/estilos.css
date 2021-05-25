@@ -1,13 +1,13 @@
-/* grid-template-rows: division de filas
 
+/* grid-template-rows: division de filas
 * grid-template-columns: division de columnas 
 * gap: ( row-gap / column-gap) -> espacio de separacion entre filas y columnas 
 * repeat (cantidadDeVeces, unidad de medida)
 * grid-template-areas : Permite definir o "reservar" areas de la grid 
-* grid-area : hace que el alemento tome el espacio previamente reservado por * * grid-template-areas 
-
+* grid-area : hace que el elemento tome el espacio previamente reservado por  grid-template-areas 
 * grid-column: line-start / line-end 
 * grid-row: line-start / line-end */
+
 
 :root {
   --image1: url(/imagenes/1.jpg);
@@ -68,7 +68,7 @@ body {
   grid-row: 4/5;
 }
 
-/* Grid usando grid-tempalte-area*/
+/* Grid usando grid-template-area*/
 
 .container1 {
   outline: 2px solid #000;
